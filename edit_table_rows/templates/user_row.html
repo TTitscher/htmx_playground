@@ -1,0 +1,16 @@
+<tr id="user-{{ user.id }}"
+        hx-get="/user_edit/{{ user.id }}"
+        hx-target="#user-{{ user.id }}"
+        hx-swap="outerHTML"
+        hx-trigger="click">
+    <td>{{ user.first_name }}</td>
+    <td>{{ user.last_name }}</td>
+    <td>{{ user.tags }}</td>
+    <td>
+        <button hx-confirm="Are you sure?"
+                hx-delete="/user/{{ user.id }}"
+                hx-target="#user-{{ user.id }}"
+                hx-swap="outerHTML swap:1s"
+                class="edit-btn">DEL</button>
+    </td>
+</tr>

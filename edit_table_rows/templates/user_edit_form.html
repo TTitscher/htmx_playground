@@ -1,0 +1,16 @@
+<tr id="user-{{ user.id }}-edit">
+    <td><input type="text" name="first_name" value="{{ user.first_name }}" required></td>
+    <td><input type="text" name="last_name" value="{{ user.last_name }}" required></td>
+    <td><input type="text" name="tags" value="{{ user.tags }}"></td>
+    <td>
+        <button hx-put="/user/{{ user.id }}"
+                hx-include="#user-{{ user.id }}-edit"
+                hx-target="#user-{{ user.id }}-edit"
+                hx-swap="outerHTML"
+                class="save-btn">Save</button>
+        <button hx-get="/user/{{ user.id }}"
+                hx-target="#user-{{ user.id }}-edit"
+                hx-swap="outerHTML"
+                class="cancel-btn">Cancel</button>
+    </td>
+</tr>

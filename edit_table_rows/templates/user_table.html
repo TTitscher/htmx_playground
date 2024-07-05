@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Tags</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+            {% include 'user_row.html' %}
+        {% endfor %}
+        <tr id="new-user-form">
+            <td><input type="text" name="first_name" placeholder="First Name" required></td>
+            <td><input type="text" name="last_name" placeholder="Last Name" required></td>
+            <td><input type="text" name="tags" placeholder="Tags (comma-separated)"></td>
+            <td>
+                <button hx-post="/user"
+                        hx-include="#new-user-form"
+                        hx-target="#new-user-form"
+                        hx-swap="beforebegin"
+                        class="add-btn">Add</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

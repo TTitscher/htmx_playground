@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Table</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>User Information</h1>
+        <div id="user-table" hx-get="/users" hx-trigger="load">
+            <!-- User table will be loaded here -->
+        </div>
+        <!--<button hx-get="/users" hx-target="#user-table" class="refresh-btn">Refresh Table</button>-->
+    </div>
+</body>
+</html>
